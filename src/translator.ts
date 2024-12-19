@@ -31,3 +31,17 @@ const alienToEnglish: Record<string, string> = {};
     englishToAlien[char] = numberSymbols[index];
     alienToEnglish[numberSymbols[index]] = char;
 });
+
+export const translateToAlienLanguage = (text: string): string => {
+    return text
+        .split("")
+        .map((char) => englishToAlien[char] || char)
+        .join("");
+};
+
+export const translateToHuman = (text: string): string => {
+    return text
+        .split("")
+        .map((char) => alienToEnglish[char] || char)
+        .join("");
+};
