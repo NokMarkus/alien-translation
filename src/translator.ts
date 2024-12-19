@@ -1,25 +1,15 @@
-export const translateToAlienLanguage = (text: string): string => {
-    return text
-        .split("")
-        .map((char) => {
-            if (/[a-zA-Z]/.test(char)) {
+const lowercaseSymbols = [
+    '≡', '⩗', '⩛', '⌓', '⦿', '⩢', '⩕', '⩤', '△', '⩟',
+    '⩔', '⨉', '⋔', '⩴', '⧫', '⟡', '⦵', '⩭', '⨀', '⊡',
+    '⊙', '⩌', '⩊', '⧂', '⩬', '⊹'
+];
 
-                return String.fromCharCode(char.charCodeAt(0) + 5);
-            }
-            return char;
-        })
-        .join("");
-};
+const uppercaseSymbols = [
+    '⊕', '⨁', '⩒', '⩑', '⊜', '⊛', '⋆', '⋇', '⨃', '⩩',
+    '⩮', '⩳', '⩲', '⊼', '⧜', '⨆', '⨇', '⩴', '⦷', '⊗',
+    '⧋', '⧩', '⩘', '⧪', '⩯', '⩬' 
+];
 
-export const translateToHuman = (input: string): string => {
-    return input
-        .split("")
-        .map((char) => {
-            if (/[a-zA-Z]/.test(char)) {
-
-                return String.fromCharCode(char.charCodeAt(0) - 5);
-            }
-            return char;
-        })
-        .join("");
-};
+const numberSymbols = [
+    '✱', '✦', '✧', '⦿', '⨀', '⧫', '⬟', '⩋', '⧂', '✣'
+];
